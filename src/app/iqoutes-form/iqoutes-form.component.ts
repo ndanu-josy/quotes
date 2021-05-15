@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Quote } from '../quotes';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-iqoutes-form',

@@ -12,16 +12,20 @@
   <div class="container">
     <h1>{{title}}</h1>
     <app-iqoutes-form (addQuote)="newQuote($event)"></app-iqoutes-form>
-    <div *ngFor='let iquote of iquotes; let mIndex =index' class="card">
+    <div *ngFor='let iquote of iquotes; let mIndex =index' class="card" style="width:80%">     
+      <div class="card-body">
+        <div class=""><h5>Author: {{iquote.author}}</h5></div>
+        <hr>
+        <p>"{{iquote.quote}}"</p>
+        <p><strong> Posted on {{iquote.date|date:'short'}}</strong></p>
+      </div>
 
-      <p>{{iquote.quote}}</p>
-      <p><strong>{{iquote.author}}</strong></p>
-      <p><strong>{{iquote.user}}</strong></p>
-      <p>Posted: {{iquote.date|date:'short'}}</p>
+      <!-- <p><strong>{{iquote.user}}</strong></p> -->
+      
 
-      <app-quote-details [mquote]='iquote'(isDeleted)='deleteQuote($event,mIndex)'></app-quote-details>
+      <app-quote-details [mquote]='iquote' (isDeleted)='deleteQuote($event,mIndex)'></app-quote-details>
     </div>
-   
+
   </div>
 
 </body>

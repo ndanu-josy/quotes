@@ -10,7 +10,7 @@
   
     <div class="container">
         <h1>{{title}}</h1>
-        <app-iqoutes-form></app-iqoutes-form>
+        <app-iqoutes-form (addQuote)="newQuote($event)"></app-iqoutes-form>
 <div *ngFor ='let iquote of iquotes; let mIndex =index' class="card">
     
     <p>{{iquote.quote}}</p>

@@ -50,6 +50,13 @@ export class QuoteComponent implements OnInit {
 
   ];
 
+  newQuote(quote: any) {
+    quote.name = quote.name;
+    quote.quote = quote.quote;
+    quote.author = quote.author;
+    quote.date = new Date(quote.date)
+    this.iquotes.unshift(quote)
+  }
   constructor() {}
 
   ngOnInit() {}

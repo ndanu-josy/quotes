@@ -1,1 +1,26 @@
-<h1>{{title}}</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="container">
+        <h1>{{title}}</h1>
+<div *ngFor ='let iquote of iquotes; let mIndex =index' class="card">
+    
+    <p>{{iquote.quote}}</p>
+    <p><strong>{{iquote.author}}</strong></p>
+    <p><strong>{{iquote.user}}</strong></p>
+
+</div>
+       
+    </div>
+   
+
+ 
+</body>
+
+</html>

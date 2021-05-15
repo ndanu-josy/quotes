@@ -1,18 +1,27 @@
-<form>
-    <div class="mb-3">
-        <label for="quote" class="form-label">Quote</label>
-        <input type="quote" class="form-control" id="" >
-        
-      </div>
-      <div class="mb-3">
-        <label for="author" class="form-label">Author</label>
-        <input type="author" class="form-control" id="" >
-        
-      </div>
-     <div class="mb-3">
-        <label for="user" class="form-label">Posted by</label>
-        <input type="user" class="form-control" id="" >
-        
-      </div>
-    <button type="submit" class="btn btn-primary">Add</button>
-  </form>
+<form (ngSubmit)="submitQuote()" #quotesForm='ngForm'>
+
+  <div class="mb-3">
+    <label for="quote" class="form-label" required>Author</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.author" name="author" #author='ngModel'required>
+    <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+      <p>Author is required</p>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="author" class="form-label">Quote</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.quote" name="quote" #quote='ngModel' required>
+    <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+      <p>Quote is required</p>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="user" class="form-label">Posted by</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.user" name="user" #user='ngModel' required>
+    <div [hidden]="user.valid || user.pristine" class="alert alert-danger">
+      <p>Your name is required</p>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>

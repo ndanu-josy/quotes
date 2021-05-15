@@ -12,7 +12,7 @@
   <div class="container">
     <h1>{{title}}</h1>
     <app-iqoutes-form (addQuote)="newQuote($event)"></app-iqoutes-form>
-    <div *ngFor='let iquote of iquotes; let mIndex =index' class="card" style="width:80%; margin:auto;">     
+    <div *ngFor='let iquote of iquotes; let mIndex =index' class="card p-3 mb-3" style="width:80%; margin:auto;">     
       <div class="card-body">
         <div class=""><h5>Author: {{iquote.author}}</h5></div>
         <hr>

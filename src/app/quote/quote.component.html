@@ -12,12 +12,13 @@
   <div class="container">
     <h1>{{title}}</h1>
     <app-iqoutes-form (addQuote)="newQuote($event)"></app-iqoutes-form>
-    <div *ngFor='let iquote of iquotes; let mIndex =index' class="card" style="width:80%">     
+    <div *ngFor='let iquote of iquotes; let mIndex =index' class="card" style="width:80%; margin:auto;">     
       <div class="card-body">
         <div class=""><h5>Author: {{iquote.author}}</h5></div>
         <hr>
         <p>"{{iquote.quote}}"</p>
         <p><strong> Posted on {{iquote.date|date:'short'}}</strong></p>
+       <a style="color:blue; text-decoration:underline;" (click)='toggleDetails(mIndex)'>See more</a>
       </div>
 
       <!-- <p><strong>{{iquote.user}}</strong></p> -->

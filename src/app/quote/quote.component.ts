@@ -70,8 +70,10 @@ export class QuoteComponent implements OnInit {
   toggleDetails(index:any){
     this.iquotes[index].showDetails=!this.iquotes[index].showDetails
   }
-
   
+  findMax() {
+    return Math.max.apply(Math, this.iquotes.map((quote) => quote.upvotes));
+  }
   constructor() {}
 
   ngOnInit() {}

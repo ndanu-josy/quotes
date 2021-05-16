@@ -11,6 +11,7 @@ export class QuoteDetailsComponent implements OnInit {
 
   @Input() mquote!: Quote;
   @Output() isDeleted = new EventEmitter<boolean>();
+  iquotes: any;
 
   quoteDelete(read:boolean){
     this.isDeleted.emit(read);
@@ -25,8 +26,6 @@ export class QuoteDetailsComponent implements OnInit {
   downvote(){
     this.mquote.downvotes=this.mquote.downvotes+=1;
   }
-
-  
   
   constructor() { }
 

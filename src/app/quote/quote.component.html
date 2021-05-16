@@ -15,23 +15,24 @@
     <app-iqoutes-form (addQuote)="newQuote($event)"></app-iqoutes-form>
     <div class="row">
         
-        <div *ngFor='let iquote of iquotes; let mIndex =index' class="card p-3 mb-3" style="width:80%; margin:auto;">     
+        <div *ngFor='let iquote of iquotes; let mIndex =index' class="card p-3 mb-3" style="width:80%; margin:auto;">   
+         
             <div class="card-body">
               <div class=""><h5>Author: {{iquote.author}}</h5></div>
               <hr>
-              <p>"{{iquote.quote}}"</p>
+              <div id = {{mIndex}} class="header">
+                <p *ngIf='iquote.upvotes !== findMax() || iquote.upvotes === 0'>"{{ iquote.quote }}"</p>
+                <div *ngIf='iquote.upvotes === findMax() && iquote.upvotes > 0'>
+                    <p appHighlight>"{{ iquote.quote }}"</p>
+                </div>
+              </div>  
               <p><strong> Posted on {{iquote.date|date:'short'}}</strong></p>
              <a style="color:blue; text-decoration:underline;" (click)='toggleDetails(mIndex)'>See more</a>
             </div>
       
             <!-- <p><strong>{{iquote.user}}</strong></p> -->
             
-            <!-- <div id = {{mIndex}} class="header">
-              <h5 *ngIf='iquote.upvotes !== findMax() || iquote.upvotes === 0'>{{ iquote.quote }}.</h5>
-              <div *ngIf='iquote.upvotes=== findMax() && iquote.upvotes > 0'>
-                  <h5 appHighlight>{{ iquote.quote }}</h5>
-              </div>
-            </div> -->
+           
             <app-quote-details [mquote]='iquote' (isDeleted)='deleteQuote($event,mIndex)'></app-quote-details>
           </div>
       

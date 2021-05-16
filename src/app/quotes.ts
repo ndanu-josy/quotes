@@ -1,4 +1,7 @@
 export class Quote {
+    map(arg0: (quote: any) => any): number[] {
+      throw new Error('Method not implemented.');
+    }
     showDetails: boolean
     constructor(
         public id: number,

@@ -10,7 +10,7 @@
 
   <div class="mb-3">
     <label for="author" class="form-label">Quote</label>
-    <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.quote" name="quote" #quote='ngModel' required>
+    <textarea class="form-control" id="name" [(ngModel)]="newQuote.quote" name="quote" rows="3" #quote='ngModel' required></textarea>
     <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
       <p>Quote is required</p>
     </div>

@@ -13,7 +13,8 @@
     <h1>{{title}}</h1>
     <div class="row">
       
-      <div class="col-md-9">
+      <div class="col-md-9 ">
+        <h2>Our Top Picks</h2>
         <div *ngFor='let iquote of iquotes; let mIndex =index' class="card shadow p-3 mb-5 bg-body rounded" style="width:80%; margin:auto;">
 
           <div class="card-body">
@@ -24,13 +25,13 @@
             <div id={{mIndex}} class="header">
               <p *ngIf='iquote.upvotes !== findMax() || iquote.upvotes === 0'>"{{ iquote.quote }}"</p>
               <div *ngIf='iquote.upvotes === findMax() && iquote.upvotes > 0'>
-                <p appHighlight>"{{ iquote.quote }}"</p>
+                <p appHighlight><span>&ldquo;</span> {{ iquote.quote }} <span>&rdquo;</span></p>
               </div>
             </div>
             <p><strong> Posted on {{iquote.date|date:'short'}}</strong></p>
             <a style="color:blue; text-decoration:underline;" (click)='toggleDetails(mIndex)'>See more</a>
           </div>
-
+          <hr>
           <!-- <p><strong>{{iquote.user}}</strong></p> -->
 
 

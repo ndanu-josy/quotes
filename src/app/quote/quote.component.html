@@ -21,17 +21,17 @@
 
           <div class="card-body">
             <div class="">
-              <h5>Author: {{iquote.author}}</h5>
+              <h5 style="color:goldenrod">Author: {{iquote.author}}</h5>
             </div>
             <hr>
             <div id={{mIndex}} class="header">
-              <p *ngIf='iquote.upvotes !== findMax() || iquote.upvotes === 0'>"{{ iquote.quote }}"</p>
+              <h5 *ngIf='iquote.upvotes !== findMax() || iquote.upvotes === 0'>"{{ iquote.quote }}"</h5>
               <div *ngIf='iquote.upvotes === findMax() && iquote.upvotes > 0'>
-                <p appHighlight><span>&ldquo;</span> {{ iquote.quote }} <span>&rdquo;</span></p>
+                <h5 appHighlight><span>&ldquo;</span> {{ iquote.quote }} <span>&rdquo;</span></h5>
               </div>
             </div>
             <p><strong> ~ {{iquote.date|date:'short'}}</strong></p>
-            <a style="color:blue; text-decoration:underline;" (click)='toggleDetails(mIndex)'>See more</a>
+            <a style="color:teal; text-decoration:underline;" (click)='toggleDetails(mIndex)'>See more/less</a>
           </div>
           <hr>
           <!-- <p><strong>{{iquote.user}}</strong></p> -->

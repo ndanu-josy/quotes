@@ -1,5 +1,5 @@
 <form (ngSubmit)='submitQuote()' #quotesForm='ngForm'>
-<h3>Add your favorite Quote</h3>
+<h2>Add a Quote</h2>
   <div class="mb-3">
     <label for="quote" class="form-label" required>Author</label>
     <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.author" name="author" #author='ngModel'required>
@@ -23,5 +23,5 @@
       <p>Your name is required</p>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Add</button>
+  <button type="submit" class="btn btn-warning">Add</button>
 </form>

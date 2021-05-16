@@ -1,0 +1,14 @@
+h2{ 
+    color: white;
+}
+form{ 
+    color: white;
+}
+form input[type]{
+    background-color: transparent;
+    color: white;
+}
+form textarea{
+    background-color: transparent;
+    color: white;
+}

@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
   <title>{{title}}</title>
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="container" style="font-family: 'Neucha', cursive;">
     <h1>{{title}}</h1>
     <div class="row">
       
@@ -28,7 +30,7 @@
                 <p appHighlight><span>&ldquo;</span> {{ iquote.quote }} <span>&rdquo;</span></p>
               </div>
             </div>
-            <p><strong> Posted on {{iquote.date|date:'short'}}</strong></p>
+            <p><strong> ~ {{iquote.date|date:'short'}}</strong></p>
             <a style="color:blue; text-decoration:underline;" (click)='toggleDetails(mIndex)'>See more</a>
           </div>
           <hr>
